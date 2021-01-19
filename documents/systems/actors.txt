@@ -1,0 +1,53 @@
+===Base Classes===
+
+Actor
+  int id          //Unique Identifier for each actor 
+  string name     //Name, can be nonunique
+  
+  
+Combatant : Actor
+  float health    //
+  int rType       //Type of resource (Mana, Vigor, etc)
+  float resource  //
+  DmgCat offense  //
+  ResCat defense  //
+  
+===Helper Classes===
+//Damage grouped up
+DmgCat
+  float base
+  float critRate      //x >= 0.0: x = 0.01
+  float critDmg       //x >= 1.0: x = 1.25
+  List<dmgMod> dMod   //Any Modifiers to Damage [Instance Specific]
+
+
+//Resistances grouped up
+ResCat
+  float grit          //Flat Physical Resistance
+  float ward          //Flat Magical Resistance
+  float prot          //Percentage Physical Resistance
+  List<EleRes> eRes   //Percentage Elemental Resistances 
+  List<resMod> rMod   //Any Modifier to Resistance [Instance Specific]
+
+//Elemental Resistances 
+EleRes
+  ElementType type  //What Element
+  float val         //How much % reduction
+  
+===Helper Enumerators===
+ElementType
+  None
+  Fire
+  Water
+  
+  
+===Main Classes===
+//Contains attack types and skills
+//For now it is simply just attacks
+
+Hero : Combatant
+
+
+Enemy : Combatant
+  
+  

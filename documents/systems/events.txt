@@ -1,0 +1,106 @@
+Format
+  > Sender
+  < Reciever
+
+If event contains X, means <for each possible hero/enemy>
+
+===Player Inputs===
+Pause
+  > UI
+Unpause
+  > UI
+
+HeroXSkillX   //For each hero & skill
+  > UI
+  < Encounter (Find Hero Target and Resolve)
+  < Animation (Play Skill Animation)
+
+
+===Instance Events===
+InstanceStart
+InstanceEnd
+
+HeroXDefeat
+
+===Encounter Events===
+EncounterStart
+  > Encounter
+  < UI (Enable Player UI)
+  
+EncounterEnd
+  > Encounter
+  < UI (Disable Player UI)
+  
+HeroXAtk  //Regular Attack
+  > Encounter
+
+HeroXDef  //Hero was hit and is defending, Spawns Damage #s
+  > Encounter
+
+HeroXHeal //Hero has recovered hp
+  > Encounter
+  
+HeroXDefeat //Hero hp <= 0
+  > Encounter
+
+HeroXRevive //Hero reactivated
+  > Encounter
+
+EnemyXAtk
+EnemyXDef
+EnemyXHeal  
+EnemyXDefeat  
+EnemyXRevive
+
+===Animation Events===
+HeroXAnimStart
+  > Animation 
+    //Linked to HeroXSkillX 
+    //Stop current animation, 
+    //Call HeroXAnimEnd immediately, 
+    //Start new animation
+
+HeroXAnimEnd
+  > Animation
+  < Encounter //Resolve Damage Numbers, Next Action
+  
+HeroXEffect
+  > Animation
+
+EnemyXAnimStart
+EnemyXAnimEnd
+EnemyXEffect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

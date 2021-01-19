@@ -1,0 +1,5 @@
+Rules
+  - Hero Skill Animations cannot be interrupted
+    - If a hero dies in the middle of a skill, immediately play defeat animation
+    - Defeat animation is the hero being knocked back and then being incapacitated
+  

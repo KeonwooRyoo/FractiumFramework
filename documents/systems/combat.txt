@@ -1,0 +1,28 @@
+Description
+  The combat system contains the data on all actors in combat. 
+  Interactions between actors will be managed by this system.
+  
+  
+===Instances===
+//This is the whole dungeon
+//Sets Player Inputs & UI
+
+SPInstance                  //Single Player Instance
+  List<Hero> party          //Party of heroes
+  List<Encounter> eList     //All encounters in the instance
+  Encounter* currEncounter  //Pointer to current instance
+
+===Encounter===
+//Only a single instance of this object may exist at a time
+//This is a single fight
+//This will contain the majority of event listeners
+//Since the game is hard-locked to 3 player units, events will
+//look like char1skill2 or something along those lines
+
+Encounter
+  
+
+CEncounter              //Combat Encounter
+  List<Enemy> enemies   //Group of enemies
+  
+
